@@ -37,3 +37,15 @@ target_link_libraries( hello-gtsam  gtsam )
 add_executable( hello-opencv src/hello-opencv.cc )
 target_link_libraries( hello-opencv  ${OpenCV_LIBRARIES} ${PROJECT_NAME}_lib gtest )
 
+
+add_executable( find_image_rot src/find_image_rot.cc )
+target_link_libraries( find_image_rot  ${OpenCV_LIBRARIES} ${PROJECT_NAME}_lib gtest )
+
+
+### GTests ###
+add_executable( sampletest  unittests/sampletest.cc )
+target_link_libraries( sampletest   gtest_main  )
+
+
+add_executable( sampletest_gtsam_way unittests/sampletest_gtsam_way.cc )
+target_link_libraries( sampletest_gtsam_way  gtsam CppUnitLite )
